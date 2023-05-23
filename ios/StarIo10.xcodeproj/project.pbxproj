@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DF3C6B12A1D2E3F001DD56A /* StarIo10-Bridging-Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3C6B02A1D2E3F001DD56A /* StarIo10-Bridging-Header.swift */; };
 		8893EDD925D3C138006114B2 /* StarIO10LoggerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8893EDD725D3C138006114B2 /* StarIO10LoggerWrapper.m */; };
 		88EC0F2E2589CD1000BA09C4 /* StarIO10.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB8712251B23BF00245D2A /* StarIO10.xcframework */; };
 		B3E7B58A1CC2AC0600A0062D /* StarIo10.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* StarIo10.m */; };
@@ -46,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libStarIo10.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStarIo10.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF3C6AF2A1D2E3F001DD56A /* StarIo10-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StarIo10-Bridging-Header.h"; sourceTree = "<group>"; };
+		4DF3C6B02A1D2E3F001DD56A /* StarIo10-Bridging-Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StarIo10-Bridging-Header.swift"; sourceTree = "<group>"; };
 		8893EDD725D3C138006114B2 /* StarIO10LoggerWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarIO10LoggerWrapper.m; sourceTree = "<group>"; };
 		8893EDD825D3C138006114B2 /* StarIO10LoggerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarIO10LoggerWrapper.h; sourceTree = "<group>"; };
 		88AB8712251B23BF00245D2A /* StarIO10.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StarIO10.xcframework; path = libs/StarIO10.xcframework; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				4DF3C6B02A1D2E3F001DD56A /* StarIo10-Bridging-Header.swift */,
 				88103EB3250F5E0100A825B8 /* Frameworks */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				E35D4B14254FD92700E242A3 /* StarDeviceDiscoveryManager */,
@@ -131,6 +135,7 @@
 				E3951A68254FDA68003A9953 /* StarPrinter */,
 				E3951A45254FDA0E003A9953 /* StarXpandCommand */,
 				E3951A70254FDA93003A9953 /* Util */,
+				4DF3C6AF2A1D2E3F001DD56A /* StarIo10-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,6 +260,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -302,6 +308,7 @@
 				8893EDD925D3C138006114B2 /* StarIO10LoggerWrapper.m in Sources */,
 				DD9C5ADA28DC2BB200E6571F /* StarSpoolJobStatusListWrapper.m in Sources */,
 				E3951A77254FDAA6003A9953 /* StarObjectManager.m in Sources */,
+				4DF3C6B12A1D2E3F001DD56A /* StarIo10-Bridging-Header.swift in Sources */,
 				E3951A64254FDA55003A9953 /* BezelSettingBuilderWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +416,8 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				"EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*]" = "$(SRCROOT)/../../node_modules/react-native-star-io10/ios/libs/StarIO10.xcframework/ios-arm64_x86_64-simulator/*.*";
@@ -438,12 +447,17 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StarIo10;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "StarIo10-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				EXCLUDED_ARCHS = x86_64;
 				EXCLUDED_SOURCE_FILE_NAMES = "$(SRCROOT)/../../node_modules/react-native-star-io10/ios/libs/StarIO10.xcframework/ios-arm64_x86_64-simulator/*.*";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -462,6 +476,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StarIo10;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "StarIo10-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
